@@ -14,24 +14,28 @@ import java.util.Scanner;
  */
 
 public class NetworkUtils {
+    private final static String LOG_TAG = NetworkUtils.class.getSimpleName();
 
-    final static String WIKI_BASE_URL = "https://www.mediawiki.org/w/api.php";
+    final static String WIKI_BASE_URL = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&";
 
-    final static String PARAM_QUERY = "q";
-
+    final static String PARAM_QUERY = "search";
 
     public static URL buildUrl(String wikiSearchQuery) {
         Uri builtUri = Uri.parse(WIKI_BASE_URL).buildUpon()
                 .appendQueryParameter(PARAM_QUERY, wikiSearchQuery)
                 .build();
+
         URL url = null;
         try {
             url = new URL(builtUri.toString());
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        return null;
+        return url;
     }
+
+
 
     public static String getResponseFromHttpUrl(URL url) throws IOException {
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();

@@ -16,11 +16,28 @@
         android:hint="Type here"
         android:textSize="22sp" />
 
-    <TextView
-        android:id="@+id/display"
+    <Button
+        android:id="@+id/button_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Click search and your result will be displayed here." />
+        android:text="play" />
+    <Button
+        android:id="@+id/button_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pause" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Click search and your result will be displayed here." />
+    </ScrollView>
+
 
 </LinearLayout>
